@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup>
+  <ItemGroup><Compile Include="../../src/EyeCarer/Schedule.cs" Link="Schedule.cs" /><Compile Include="../../src/EyeCarer/Settings.cs" Link="Settings.cs" /></ItemGroup>
+</Project>

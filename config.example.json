@@ -1,0 +1,13 @@
+{
+  "IntervalSeconds": 900,
+  "DurationSeconds": 15,
+  "StartImmediately": false,
+  "BlurRadius": 22,
+  "GrainStrength": 0.70,
+  "HazeCoverage": 0.50,
+  "HazeOpacity": 0.65,
+  "ShowCenterText": true,
+  "CenterText": "Take rest",
+  "StartWithWindows": true,
+  "EnableAnimations": true
+}

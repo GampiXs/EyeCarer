@@ -1,0 +1,32 @@
+name: Windows build
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: '8.0.x'
+      - name: Restore
+        run: dotnet restore src/EyeCarer/EyeCarer.csproj -r win-x64
+      - name: Build
+        run: dotnet build src/EyeCarer/EyeCarer.csproj -c Release -r win-x64 --no-restore
+      - name: Automated checks
+        run: dotnet run --project tests/EyeCarer.Checks -c Release
+      - name: Publish
+        run: dotnet publish src/EyeCarer/EyeCarer.csproj -c Release -r win-x64 --self-contained true --no-restore -p:DebugType=None -p:DebugSymbols=false -o artifacts/app
+      - uses: actions/upload-artifact@v6
+        with:
+          name: EyeCarer-win-x64
+          path: artifacts/app/
+          if-no-files-found: error
