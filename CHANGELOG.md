@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.0 — First public release
+## 1.0.0 — 2026-10-30 — First public release
 
 - Background screen break scheduling with configurable interval and duration.
 - Static desktop blur, monochrome grain, red radial haze and custom center text.
